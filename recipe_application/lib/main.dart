@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         backgroundColor: Colors.white,
+        scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(color: Colors.white, elevation: 0),
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
