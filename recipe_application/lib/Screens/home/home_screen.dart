@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipeapplication/Screens/home/components/body.dart';
+import 'package:recipeapplication/components/my_bottom_nav_bar.dart';
 import 'package:recipeapplication/size_config.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,6 +11,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(),
       body: Body(),
+      bottomNavigationBar: MyBottomBar(),
     );
   }
 
