@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipeapplication/Screens/home/home_screen.dart';
+import 'package:recipeapplication/Screens/profile/profile_screen.dart';
 
 class NavItem {
   final int id;
@@ -17,7 +18,7 @@ class NavItem {
 }
 
 class NavItems extends ChangeNotifier {
-  int selectedIndex = 1;
+  int selectedIndex = 0;
   List<NavItem> items = [
     NavItem(
       id: 1,
@@ -39,6 +40,7 @@ class NavItems extends ChangeNotifier {
     NavItem(
       id: 5,
       icon: "assets/icons/user.svg",
+      destination: ProfileScreen()
     ),
   ];
 
