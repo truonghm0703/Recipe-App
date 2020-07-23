@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:recipeapplication/Screens/profile/components/info.dart';
+import 'package:recipeapplication/Screens/profile/components/profile_menu_item.dart';
 import 'package:recipeapplication/constants.dart';
 import 'package:recipeapplication/size_config.dart';
 
@@ -8,59 +11,33 @@ class Body extends StatelessWidget {
     double defaultSize = SizeConfig.defaultSize;
     return Column(
       children: <Widget>[
-        SizedBox(
-          height: defaultSize * 24,
-          child: Stack(
-            children: <Widget>[
-              ClipPath(
-                clipper: CustomShape(),
-                child: Container(
-                  height: defaultSize * 15,
-                  color: kPrimaryColor,
-                ),
-              ),
-              Center(
-                child: Container(
-                  height: defaultSize * 14,
-                  width: defaultSize * 14,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: AssetImage("assets/images/pic.png"),
-                      fit: BoxFit.cover
-                    ),
-                    border: Border.all(
-                      color: Colors.white,
-                      width: defaultSize * 0.8
-                    )
-                  ),
-                ),
-              ),
-            ],
-          ),
+        Info(
+          name: "Hoang Minh Truong",
+          email: "minhtruong0703@gmail.com",
+          avatar: "assets/images/pic.png",
+        ),
+        SizedBox(height: defaultSize * 2,),
+        ProfileMenuItem(
+          icon: "assets/icons/bookmark_fill.svg",
+          title: "Recipes",
+          press: () {},
+        ),
+        ProfileMenuItem(
+          icon: "assets/icons/chef_color.svg",
+          title: "Super Plans",
+          press: () {},
+        ),
+        ProfileMenuItem(
+          icon: "assets/icons/language.svg",
+          title: "Change Language",
+          press: () {},
+        ),
+        ProfileMenuItem(
+          icon: "assets/icons/info.svg",
+          title: "Help",
+          press: () {},
         )
       ],
     );
-  }
-}
-
-class CustomShape extends CustomClipper<Path>{
-  @override
-  Path getClip(Size size) {
-    // TODO: implement getClip
-    var path = Path();
-    double height = size.height;
-    double width = size.width;
-    path.lineTo(0, height - 100);
-    path.quadraticBezierTo(width/2, height, width, height - 100);
-    path.lineTo(width, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    // TODO: implement shouldReclip
-    return true;
   }
 }
